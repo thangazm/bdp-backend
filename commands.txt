@@ -1,0 +1,10 @@
+bin/hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.3.jar -file /home/ubuntu/mapper.py -mapper /home/ubuntu/mapper.p y -file /home/ubuntu/reducer.py -reducer /home/ubuntu/reducer.py -input /user/hadoop/* -output /user/hadoop/output
+
+
+start hadoop
+
+stop-all.sh
+hadoop namenode -format
+start-all.sh
+
+bin/hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.3.jar -file /home/hadoop/bdp-backend/lib/rental-count-365/mapper.py -mapper mapper.py -file /home/hadoop/bdp-backend/lib/rental-count-365/reducer.py -reducer reducer.py -input /user/hadoop/inputs/listings.csv -output /user/hadoop/output/rental-count-365
