@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" -->
+    <!-- integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- plugins:css -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <!-- endinject -->
+
+
+    <title>Big Data Programming!</title>
+</head>
+
+<body>
+    <div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Total number of rentals Available on 365 Days a Year: 843</h3>
+            </div>
+            <div class="col-sm-6">
+                <!-- <div class="card">
+                    <div id="chartContainer" style="height: 300px; width: 100%;">
+                    </div>
+                </div> -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Bar Chart</h4>
+                        <canvas id="nhgroup"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Bar Chart</h4>
+                        <canvas id="avgprice"></canvas>
+                    </div>
+                </div>
+                <!-- <div id="myTable">
+                </div> -->
+                <!-- <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Pie chart</h4>
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div> -->
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Table</h4>
+                        <div id="nhavgprice">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Table</h4>
+                        <div  id="lowestprice">
+                        </div >
+                    </div>
+                </div>
+                <!-- <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Pie chart</h4>
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div> -->
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Pie chart</h4>
+                        <canvas id="ownerpie"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card" style="width:800px; margin:0 auto;">
+                <div class="card-body">
+                    <h4 class="card-title">Bar chart</h4>
+                    <canvas id="histogram"></canvas>
+                </div>
+            </div>
+        </div>
+        <br />
+        <!-- <div class="row">
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title text-md-center text-xl-left">Sales</p>
+                  <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">34040</h3>
+                    <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                  </div>  
+                  <p class="mb-0 mt-2 text-danger">0.12% <span class="text-black ml-1"><small>(30 days)</small></span></p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        <!-- <div class="row"> -->
+
+        <!-- <div class="col-sm">
+                One of three columns
+            </div>
+            <div class="col-sm">
+                One of three columns
+            </div> -->
+        <!-- </div> -->
+    </div>
+</body>
+<!-- <script async src="./assets/scripts/index.js">
+
+</script> -->
+
+<!-- <script src="./assets/vendors/base/vendor.bundle.base.js"></script>
+<endinject -->
+<!-- Plugin js for this page-->
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<!-- <script src="./assets/js/off-canvas.js"></script>
+<script src="./assets/js/hoverable-collapse.js"></script>
+<script src="./assets/js/template.js"></script>
+<script src="./assets/js/todolist.js"></script> -->
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="./assets/js/nhgroup.js"></script>
+<script src="./assets/js/avgprice.js"></script>
+<script src="./assets/js/nhpravg.js"></script>
+<script src="./assets/js/lowestprice.js"></script>
+<script src="./assets/js/ownerpie.js"></script>
+<script src="./assets/js/histogram.js"></script>
+<!-- <script src="./assets/js/custom.js"></script> -->
+
+</html>

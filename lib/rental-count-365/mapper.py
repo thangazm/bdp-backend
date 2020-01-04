@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # ----------------------------------------------------------
 # Mapper function for total rent count on 365 availability
 # ----------------------------------------------------------
@@ -19,10 +20,10 @@ def mapper_rental_count():
         for days in availability:
             days = int(days)
             if days == 365:
-                print('%s\t%s' % (days, 1))
+                print '%s\t%s' % (days, 1)
                 
     except Exception as e:
-        print(e)
+        print e
 
 # run function mapper
 mapper_rental_count()

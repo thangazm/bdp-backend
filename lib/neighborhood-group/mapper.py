@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # ------------------------------------------------------------
 # Mapper function for number of rentals per neighborhood group
 # ------------------------------------------------------------
@@ -17,10 +18,10 @@ def mapper_rental_neighbor_group():
         nh_groups = nh_groups[1:]
 
         for group in nh_groups:
-            print('%s\t%s' % (group, 1))
+            print '%s\t%s' % (group, 1)
                 
     except Exception as e:
-        print(e)
+        print e
 
 # run function mapper
 mapper_rental_neighbor_group()
