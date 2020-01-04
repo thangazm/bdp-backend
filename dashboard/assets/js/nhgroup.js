@@ -4,11 +4,13 @@ $(function () {
      * Data and config for customValues
      */
     'use strict';
-    const fileUrl = './resources/mytext.txt'; // provide file location
-    var headers = [];
-    var labels = [];
+    const filenhgroup = './resources/neighborhood-group/nh-group.txt'; // provide file location
+
+    // total number of rentals for neighborhood groups
+    var label = []
+    var data = []
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", fileUrl, false);
+    rawFile.open("GET", filenhgroup, false);
     rawFile.onreadystatechange = function () {
         if (rawFile.readyState === 4) {
             if (rawFile.status === 200 || rawFile.status == 0) {
@@ -17,15 +19,16 @@ $(function () {
                 // alert(lines);
                 for (var i = 0; i < lines.length; i++) {
                     console.log('text is', lines[i]);
-                    var data = lines[i].split(' ');
-                    headers.push(data[0] + ' ' + data[1]);
-                    labels.push(data[2]);
+                    var text = lines[i].split(' ');
+                    var region = text[0] + ' ' + text[1];
+                    label.push(region);
+                    const rental = parseInt(text[2], 10)
+                    data.push(rental);
                 }
             }
         }
     }
-    console.log(headers)
-    console.log(labels)
+    rawFile.send(null);
 
     function getRandomColor() {
         var letters = '0123456789ABCDEF'.split('');
@@ -44,16 +47,16 @@ $(function () {
         return data;
     }
 
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
+    var ctx_nhgroup = document.getElementById('nhgroup').getContext('2d');
+    var nhgroup = new Chart(ctx_nhgroup, {
         type: 'bar',
         data: {
-            labels: headers,
+            labels: label,
             datasets: [{
                 label: '# of Rentals',
-                backgroundColor: getRandomColorEachEmployee(6),
-                borderWidth: getRandomColorEachEmployee(6),
-                data: labels,
+                backgroundColor: getRandomColorEachEmployee(data.length),
+                borderWidth: getRandomColorEachEmployee(data.length),
+                data: data,
                 borderWidth: 1
             }]
         },
@@ -67,29 +70,4 @@ $(function () {
             }
         }
     });
-
-    var arrObj = [{ "firstName": "John", "lastName": "Doe", "age": "46" },
-    { "firstName": "James", "lastName": "Blanc", "age": "24" }]
-    var objLength = arrObj.length;
-    var myvar = '<table>' +
-        '<tr>' +
-        '<th>firstName</th>' +
-        '<th>last Name</th>' +
-        '<th>age</th>' +
-        '</tr>';
-
-    for (var i = 0; i < objLength; i++) {
-        myvar += '<tr>' +
-            '<td>' + arrObj[i].firstName + '</td>' +
-            '<td>' + arrObj[i].lastName + '</tD>' +
-            '<td>' + arrObj[i].age + '</th>' +
-            '</tr>'
-    }
-
-    myvar += '</table>';
-
-    console.log(myvar);
-    document.getElementById('myTable').innerHTML = myvar;
-
-    rawFile.send(null);
 });

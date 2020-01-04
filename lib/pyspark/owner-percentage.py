@@ -27,8 +27,8 @@ def write_owner_percentage():
         total_count = df.select('host_name').count()
 
         # get percentage
-        df2 = sqlContext.sql('select host_name, count, (count * 100)/%s AS percentage from owners where count != 1' % (total_count))
-
+        # df2 = sqlContext.sql('select host_name, count, (count * 100)/%s AS percentage from owners where count != 1' % (total_count))
+        df2 = sqlContext.sql('select SUM(count) * 100/%s AS percentage from owners where count > 1' % (total_count))
         # save file into hdfs
         df2.repartition(1).write.format("com.databricks.spark.csv").option("header", "true").save('hdfs://localhost:9000/user/hadoop/output/pyspark/owner-percentage')
 

@@ -1,6 +1,8 @@
 CREATE DATABASE IF NOT EXISTS bdphive;
 CREATE SCHEMA IF NOT EXISTS bdp;
 
+USE bdphive;
+USE bdp;
 
 CREATE EXTERNAL TABLE IF NOT EXISTS bdp.hive(id INT, name STRING, host_id INT, host_name STRING, neighborhood_group STRING, neighborhood STRING, latitude FLOAT, longtitude FLOAT, roomtype STRING, price INT, minimum_nights INT, number_of_reviews INT, last_review DATE, reviews_per_month FLOAT, calculated_host_listing_count INT, availability_365 INT)
 # ROW FORMAT DELIMITED
