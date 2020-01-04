@@ -1,0 +1,3 @@
+Central Region 121.85467390
+East Region 121.54646446464
+North-East Region 79.156446466

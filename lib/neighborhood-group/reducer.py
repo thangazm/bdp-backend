@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -------------------------------------------------------------
 # reducer function for number of rentals per neighborhood group
 # -------------------------------------------------------------
@@ -22,10 +23,10 @@ def reducer_rental_neighbor_group():
                 ng_count[group] = count
 
         for group in ng_count.keys():
-            print ('%s\t%s'% ( group, ng_count[group] ))
+            print '%s\t%s'% ( group, ng_count[group] )
                 
     except Exception as e:
-        print(e)
+        print e
 
 # run function reducer
 reducer_rental_neighbor_group()

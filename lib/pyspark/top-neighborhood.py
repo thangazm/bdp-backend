@@ -21,7 +21,7 @@ def top_neighborhood():
         df.createOrReplaceTempView("top_neighbourhood")
         # df.select('neighbourhood').show()
 
-        df2 = sqlContext.sql('select neighbourhood, price, count(*) as count from top_neighbourhood where availability_365 == 365 group by neighbourhood').show()
+        df2 = sqlContext.sql('select neighbourhood, count(*) as number_of_rentals ​from​ top_neighbourhood where neighbourhood ​in​ (select neighbourhood ​from​ (select neighbourhood, avg(price) as price ​from​ top_neighbourhood group ​by neighbourhood order by price desc limit 5)) ​and availability_365 = 365​ group ​by neighbourhood').show()
 
         df2.groupBy('neighbourhood').count().select('neighbourhood', f.col('count').alias('count')).orderBy('count')show()
 
@@ -32,6 +32,8 @@ def top_neighborhood():
         # data.createOrReplaceTempView("mytable")
 
         sqlContext.sql('select last_review from top_neighbourhood').show()
+
+        select neighbourhood, count(*) as number_of_rentals ​from​ listings where neighbourhood ​in​ (select neighbourhood ​from​ (select neighbourhood, avg(price) as price ​from​ listings​ group ​by neighbourhood order by price desc limit 5)) ​and availability_365 = 365​ group ​by neighbourhood
         # get percentage
         df2 = sqlContext.sql('select host_name, count, (count * 100)/%s AS percentage from mytable where count != 1' % (total_count))
 

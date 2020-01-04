@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # ----------------------------------------------------------
 # reducer function for total rent count on 365 availability
 # ----------------------------------------------------------
@@ -22,10 +23,10 @@ def reducer_rental_count():
                 dayscount[days] = count
 
         for days in dayscount.keys():
-            print ('%s\t%s'% ( days, dayscount[days] ))
+            print '%s\t%s'% ( days, dayscount[days] )
                 
     except Exception as e:
-        print(e)
+        print e
 
 # run function reducer
 reducer_rental_count()
