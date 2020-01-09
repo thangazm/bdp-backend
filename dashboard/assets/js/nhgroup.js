@@ -4,7 +4,7 @@ $(function () {
      * Data and config for customValues
      */
     'use strict';
-    const filenhgroup = './resources/neighborhood-group/nh-group.txt'; // provide file location
+    const filenhgroup = 'https://bdp-thanga.s3.us-east-1.amazonaws.com/dashboard/resources/neighborhood-group/nh-group.txt'; // provide file location
 
     // total number of rentals for neighborhood groups
     var label = []

@@ -1,0 +1,14 @@
+.custom-row {
+    padding-bottom: 10px!important;
+    /* min-height: 400px;
+    max-height: 400px; */
+}
+
+.page-background{
+   background-color:#FAF6F5; 
+}
+
+.chart-container {
+    width: 300px;
+    height: 200px;
+}

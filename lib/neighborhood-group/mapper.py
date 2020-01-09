@@ -25,4 +25,3 @@ def mapper_rental_neighbor_group():
 
 # run function mapper
 mapper_rental_neighbor_group()
-
