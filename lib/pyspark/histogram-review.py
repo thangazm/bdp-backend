@@ -34,7 +34,7 @@ def histogram_review_by_month():
         data = data.groupBy('last_review').count().select('last_review', f.col('count').alias('count')).sort('last_review')
 
         # save file into hdfs
-        data.repartition(1).write.format("com.databricks.spark.csv").option("header", "true").save('hdfs://localhost:9000/user/hadoop/output/pyspark/histogram-month')
+        data.repartition(1).write.format("com.databricks.spark.csv").option("header", "false").save('hdfs://localhost:9000/user/hadoop/output/pyspark/histogram-month')
 
     except Exception as e:
         print(e)
