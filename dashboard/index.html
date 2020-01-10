@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="assets/css/custom.css">
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" -->
     <!-- integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -30,15 +30,19 @@
     <title>Big Data Programming!</title>
 </head>
 
-<body>
+<body class="page-background">
     <div class="alert alert-primary" role="alert">
-        A simple primary alert—check it out!
+        Singapore Airbnb Data Dashboard
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h3>Total number of rentals Available on 365 Days a Year: 843</h3>
+        <div class="row" style="padding-bottom: 5px!important;">
+            <div class="col-sm-12">
+                <div class="alert alert-warning" role="alert">
+                    <h5>Total number of rentals Available on 365 Days a Year: 843</h5>
+                </div>
             </div>
+        </div>
+        <div class="row custom-row">
             <div class="col-sm-6">
                 <!-- <div class="card">
                     <div id="chartContainer" style="height: 300px; width: 100%;">
@@ -46,69 +50,66 @@
                 </div> -->
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Bar Chart</h4>
+                        <h5 class="card-title">Number of rentals per neighborhood group</h5>
                         <canvas id="nhgroup"></canvas>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Bar Chart</h4>
+                        <h5 class="card-title">Average price of Private room rental by neighborhood group</h5>
                         <canvas id="avgprice"></canvas>
                     </div>
                 </div>
-                <!-- <div id="myTable">
-                </div> -->
-                <!-- <div class="card">
+            </div>
+        </div>
+        <div class="row custom-row" >
+            <div class="col-sm-6">
+                <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Pie chart</h4>
-                        <canvas id="pieChart"></canvas>
+                        <h5 class="card-title">Top 10 neighbourhood based on Average price of Private room</h5>
+                        <div id="nhavgprice" class="table-responsive-lg" style="overflow: auto;height: 500px;">
+                        </div>
                     </div>
-                </div> -->
+                </div>
             </div>
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Table</h4>
-                        <div id="nhavgprice">
+                        <h5 class="card-title">The 5 lowest price rentals per each room type</h5>
+                        <div id="lowestprice" class="table-responsive-lg" style="overflow: auto;height: 500px;">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row custom-row">
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Table</h4>
-                        <div  id="lowestprice">
-                        </div >
-                    </div>
-                </div>
-                <!-- <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Pie chart</h4>
-                        <canvas id="pieChart"></canvas>
-                    </div>
-                </div> -->
-            </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Pie chart</h4>
+                        <h5 class="card-title">Percentage of owners who rent more than one property</h5>
                         <canvas id="ownerpie"></canvas>
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Neighborhood with top 5 rental price</h5>
+                        <div id="topavg" class="table-responsive-lg" style="overflow: auto;height: 500px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row">
-            <div class="card" style="width:800px; margin:0 auto;">
-                <div class="card-body">
-                    <h4 class="card-title">Bar chart</h4>
-                    <canvas id="histogram"></canvas>
+        <div class="row custom-row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Histogram of number of rentals reviewed</h5>
+                        <canvas id="histogram"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -159,6 +160,7 @@
 <script src="./assets/js/lowestprice.js"></script>
 <script src="./assets/js/ownerpie.js"></script>
 <script src="./assets/js/histogram.js"></script>
+<script src="./assets/js/topavg.js"></script>
 <!-- <script src="./assets/js/custom.js"></script> -->
 
 </html>

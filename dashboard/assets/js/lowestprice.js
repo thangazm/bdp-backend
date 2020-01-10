@@ -4,7 +4,7 @@ $(function () {
      * Data and config for customValues
      */
     'use strict';
-    const filelowestprice = './resources/hive2.2.3/lowest-top-5.txt'; 
+    const filelowestprice = 'https://bdp-thanga.s3.us-east-1.amazonaws.com/dashboard/resources/hive2.2.3/lowest-top-5.txt'; 
 
     // total number of rentals for neighborhood groups
     var data = []
@@ -29,15 +29,15 @@ $(function () {
     // var arrObj = [{ "firstName": "John", "lastName": "Doe", "age": "46" },
     // { "firstName": "James", "lastName": "Blanc", "age": "24" }]
     var objLength = data.length;
-    var myvar = '<table>' +
+    var myvar = '<table class="table">' +
         '<tr>' +
-        '<th>Host</th>' +
-        '<th>Price</th>' +
-        '<th>Room Type</th>' +
+        '<th scope="col">Host</th>' +
+        '<th scope="col">Price</th>' +
+        '<th scope="col">Room Type</th>' +
         '</tr>';
 
     for (var i = 0; i < objLength; i++) {
-        myvar += '<tr>' +
+        myvar += '<tr scope="row">' +
             '<td>' + data[i].host + '</td>' +
             '<td>' + data[i].price + '</td>' +
             '<td>' + data[i].roomtype + '</td>' +
